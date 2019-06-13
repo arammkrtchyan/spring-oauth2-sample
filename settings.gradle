@@ -1,0 +1,6 @@
+rootProject.name = 'spring-oauth2-sample'
+
+include ':auth-service'
+
+include ':auth-service-client'
+

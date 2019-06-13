@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  docker-mysql:
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=learn-oauth2
+      - MYSQL_PASSWORD=root
+  auth-service:
+    build:
+      context: ./auth-service
+      dockerfile: Dockerfile
+    depends_on:
+      - docker-mysql
+    links:
+      - docker-mysql:docker-mysql
+    ports:
+      - 8181:8181
+    environment:
+      - DATABASE_HOST=docker-mysql
+      - DATABASE_USER=root
+      - DATABASE_PASSWORD=root
+      - DATABASE_NAME=test
+      - DATABASE_PORT=3306
+  auth-client:
+    build:
+      context: ./auth-service-client
+      dockerfile: Dockerfile
+    depends_on:
+      - auth-service
+    links:
+      - auth-service:auth-service
+    ports:
+      - 9999:9999
+    environment:
+      - AUTH_SERVICE_HOST=auth-service
+      - AUTH_SERVICE_PORT=9999

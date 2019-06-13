@@ -1,0 +1,22 @@
+server:
+  port: 9999
+  servlet:
+    context-path: /client
+security:
+  oauth2:
+    client:
+      client-id: fooClientIdPassword
+      client-secret: secret
+      access-token-uri: http://localhost:8181/auth-service/oauth/token
+      user-authorization-uri: http://localhost:8181/auth-service/oauth/authorize
+      authentication-scheme: query
+      client-authentication-scheme: form
+    resource:
+      user-info-uri: http://localhost:8181/auth-service/me
+debug: true
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG

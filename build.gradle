@@ -1,0 +1,39 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'eclipse'
+
+    sourceCompatibility = 1.8
+
+    group = 'co.donebyme.oauth2'
+    version = '0.0.1'
+
+    repositories {
+        mavenCentral()
+    }
+}
+
+subprojects {
+
+    ext {
+        distDirectory = "$project.rootDir/dist/$project.name"
+    }
+
+    task dist(type: Copy, dependsOn: build) {
+        from libsDir
+        into distDirectory
+        outputs.upToDateWhen { false }
+    }
+
+    task dockerfile(type: Copy) {
+        from "./Dockerfile"
+        into distDirectory
+        rename {
+            return "${project.name}.dockerfile"
+        }
+
+        filter(ReplaceTokens, tokens: [app: project.name, version: version])
+    }
+
+}
