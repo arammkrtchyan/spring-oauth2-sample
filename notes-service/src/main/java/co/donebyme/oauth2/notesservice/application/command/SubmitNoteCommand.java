@@ -1,7 +1,9 @@
 package co.donebyme.oauth2.notesservice.application.command;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
@@ -22,7 +24,11 @@ public class SubmitNoteCommand {
     @Size(max = 1000)
     private String note;
 
-    public SubmitNoteCommand(String email, String title, String note) {
+    @JsonCreator
+    public SubmitNoteCommand(
+            @JsonProperty("email") String email,
+            @JsonProperty("title")String title,
+            @JsonProperty("note")String note) {
         this.email = email;
         this.title = title;
         this.note = note;
@@ -40,6 +46,7 @@ public class SubmitNoteCommand {
         return email;
     }
 
+    @JsonIgnore
     public SubmitNoteCommand setEmail(String email) {
         this.email = email;
         return this;

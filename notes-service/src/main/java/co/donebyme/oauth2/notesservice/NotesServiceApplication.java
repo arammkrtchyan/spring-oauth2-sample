@@ -29,10 +29,11 @@ public class NotesServiceApplication {
 
         @Override
         public void configure(HttpSecurity http) throws Exception {
-            super.configure(http);
+            http.authorizeRequests()
+                    .anyRequest().fullyAuthenticated();
         }
 
-        @Primary
+        /*@Primary
         @Bean
         public RemoteTokenServices tokenService() {
             RemoteTokenServices tokenService = new RemoteTokenServices();
@@ -41,7 +42,7 @@ public class NotesServiceApplication {
             tokenService.setClientId("fooClientIdPassword");
             tokenService.setClientSecret("secret");
             return tokenService;
-        }
+        }*/
     }
 
 }

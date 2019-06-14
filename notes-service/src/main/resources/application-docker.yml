@@ -7,11 +7,11 @@ spring:
     hibernate:
       ddl-auto: none
   datasource:
-    url: jdbc:mysql://localhost:3306/learn-oauth2
+    url: jdbc:mysql://docker-mysql:3306/learn-oauth2
     username: root
     password: root
-    # initialization-mode: always
+    initialization-mode: always
 security:
   oauth2:
     resource:
-      user-info-uri: http://localhost:8181/auth-service/me
+      user-info-uri: http://${AUTH_SERVICE_EXT_HOST:192.168.99.100}:8181/auth-service/me

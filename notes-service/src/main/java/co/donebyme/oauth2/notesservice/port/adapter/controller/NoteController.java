@@ -28,8 +28,8 @@ public class NoteController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public Note submitNote(@Valid @RequestBody SubmitNoteCommand command) {
-        return noteApplicationService.submitNote(command.setEmail(getUserEmail()));
+    public NoteView submitNote(@Valid @RequestBody SubmitNoteCommand command) {
+        return noteView(noteApplicationService.submitNote(command.setEmail(getUserEmail())));
     }
 
     @RequestMapping(

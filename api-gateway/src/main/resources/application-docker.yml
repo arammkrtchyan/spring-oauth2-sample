@@ -1,0 +1,33 @@
+server:
+  port: 8080
+
+zuul:
+  sensitive-headers: Cookie,Set-Cookie
+  routes:
+    notes-resource:
+      path: /notes-service/**
+      url: http://${AUTH_SERVICE_EXT_HOST:192.168.99.100}:8182/notes-service
+    oauth:
+      path: /oauth/**
+      url: http://${AUTH_SERVICE_EXT_HOST:192.168.99.100}:8181/auth-service/oauth
+
+security:
+  oauth2:
+    client:
+      client-id: fooClientIdPassword
+      client-secret: secret
+      access-token-uri: http://${AUTH_SERVICE_EXT_HOST:192.168.99.100}:8181/auth-service/oauth/token
+      user-authorization-uri: http://${AUTH_SERVICE_EXT_HOST:192.168.99.100}:8181/auth-service/oauth/authorize
+      authentication-scheme: query
+      client-authentication-scheme: form
+    resource:
+      user-info-uri: http://${AUTH_SERVICE_EXT_HOST:192.168.99.100}:8181/auth-service/me
+debug: true
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+
+
