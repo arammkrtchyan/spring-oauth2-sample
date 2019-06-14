@@ -20,6 +20,8 @@
     <modules>
         <module>auth-service</module>
         <module>auth-service-client</module>
+        <module>api-gateway</module>
+        <module>notes-service</module>
     </modules>
 
     <properties>
