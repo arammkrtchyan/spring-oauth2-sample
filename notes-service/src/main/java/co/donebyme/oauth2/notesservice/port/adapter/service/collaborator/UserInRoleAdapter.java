@@ -1,6 +1,6 @@
 package co.donebyme.oauth2.notesservice.port.adapter.service.collaborator;
 
-import co.donebyme.oauth2.notesservice.model.author.Author;
+import co.donebyme.oauth2.notesservice.domain.model.author.Author;
 
 /**
  * @author Aram Mkrtchyan.

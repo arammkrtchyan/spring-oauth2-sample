@@ -1,4 +1,4 @@
-package co.donebyme.oauth2.notesservice.model.note;
+package co.donebyme.oauth2.notesservice.domain.model.note;
 
 import javax.persistence.Embeddable;
 import java.io.Serializable;

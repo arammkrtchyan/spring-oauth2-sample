@@ -1,9 +1,9 @@
 package co.donebyme.oauth2.notesservice.port.adapter.persistence;
 
-import co.donebyme.oauth2.notesservice.model.author.Author;
-import co.donebyme.oauth2.notesservice.model.note.Note;
-import co.donebyme.oauth2.notesservice.model.note.NoteId;
-import co.donebyme.oauth2.notesservice.model.note.NoteRepository;
+import co.donebyme.oauth2.notesservice.domain.model.author.Author;
+import co.donebyme.oauth2.notesservice.domain.model.note.Note;
+import co.donebyme.oauth2.notesservice.domain.model.note.NoteId;
+import co.donebyme.oauth2.notesservice.domain.model.note.NoteRepository;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

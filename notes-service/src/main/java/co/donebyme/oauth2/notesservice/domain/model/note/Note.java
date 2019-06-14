@@ -1,7 +1,7 @@
-package co.donebyme.oauth2.notesservice.model.note;
+package co.donebyme.oauth2.notesservice.domain.model.note;
 
 
-import co.donebyme.oauth2.notesservice.model.author.Author;
+import co.donebyme.oauth2.notesservice.domain.model.author.Author;
 
 import javax.persistence.Embedded;
 import javax.persistence.EmbeddedId;

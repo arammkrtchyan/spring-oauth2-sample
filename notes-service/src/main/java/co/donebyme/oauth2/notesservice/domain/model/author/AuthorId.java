@@ -1,4 +1,4 @@
-package co.donebyme.oauth2.notesservice.model.author;
+package co.donebyme.oauth2.notesservice.domain.model.author;
 
 import java.io.Serializable;
 import java.util.Objects;

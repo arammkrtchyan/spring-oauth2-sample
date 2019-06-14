@@ -1,7 +1,7 @@
 package co.donebyme.oauth2.notesservice.port.adapter.service.collaborator;
 
-import co.donebyme.oauth2.notesservice.model.author.Author;
-import co.donebyme.oauth2.notesservice.model.author.CollaboratorService;
+import co.donebyme.oauth2.notesservice.domain.model.author.Author;
+import co.donebyme.oauth2.notesservice.domain.model.author.CollaboratorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

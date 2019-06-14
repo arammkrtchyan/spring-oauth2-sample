@@ -6,11 +6,11 @@ import co.donebyme.oauth2.notesservice.application.command.SubmitNoteCommand;
 import co.donebyme.oauth2.notesservice.application.exception.NoteAccessDeniedException;
 import co.donebyme.oauth2.notesservice.application.exception.NoteNotFoundException;
 import co.donebyme.oauth2.notesservice.application.exception.UserNotFoundException;
-import co.donebyme.oauth2.notesservice.model.author.Author;
-import co.donebyme.oauth2.notesservice.model.author.CollaboratorService;
-import co.donebyme.oauth2.notesservice.model.note.Note;
-import co.donebyme.oauth2.notesservice.model.note.NoteId;
-import co.donebyme.oauth2.notesservice.model.note.NoteRepository;
+import co.donebyme.oauth2.notesservice.domain.model.author.Author;
+import co.donebyme.oauth2.notesservice.domain.model.author.CollaboratorService;
+import co.donebyme.oauth2.notesservice.domain.model.note.Note;
+import co.donebyme.oauth2.notesservice.domain.model.note.NoteId;
+import co.donebyme.oauth2.notesservice.domain.model.note.NoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -4,7 +4,7 @@ package co.donebyme.oauth2.notesservice.port.adapter.controller;
 import co.donebyme.oauth2.notesservice.application.NoteApplicationService;
 import co.donebyme.oauth2.notesservice.application.command.ModifyNoteCommand;
 import co.donebyme.oauth2.notesservice.application.command.SubmitNoteCommand;
-import co.donebyme.oauth2.notesservice.model.note.Note;
+import co.donebyme.oauth2.notesservice.domain.model.note.Note;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
